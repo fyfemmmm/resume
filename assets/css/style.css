@@ -1314,11 +1314,20 @@ ul {
   }
 
   /* Allow sections to flow across pages — individual cards still stay together */
+  body {
+    overflow: visible !important;
+  }
+
   .section-tile {
     padding: 15pt 0 !important;
+    page-break-before: always;
+    break-before: page;
   }
 
   .hero-tile {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
     padding: 30pt 0 15pt !important;
     min-height: auto !important;
   }
