@@ -1304,11 +1304,32 @@ ul {
     display: none !important;
   }
 
-  /* Reset to black-on-white for print */
+  /* Reset text to black for print (overrides dark mode) */
+  body,
+  .hero-display,
+  .hero-tagline,
+  .hero-meta,
+  .section-label,
+  .display-lg,
+  .card-title,
+  .card-subtitle,
+  .card-desc,
+  .card-detail-list li,
+  .skill-title,
+  .skill-list li,
+  .award-title,
+  .award-citation,
+  .award-doi,
+  .project-title,
+  .project-desc,
+  .contact-label,
+  .contact-detail {
+    color: #000 !important;
+  }
+
   body {
     font-size: 11pt;
     line-height: 1.5;
-    color: #000 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -1319,14 +1340,8 @@ ul {
   }
 
   .section-tile {
-    padding: 15pt 0 !important;
-    page-break-before: always;
-    break-before: page;
+    padding: 12pt 0 !important;
   }
-
-  .hero-tile {
-    page-break-before: avoid;
-    break-before: avoid;
   }
     padding: 30pt 0 15pt !important;
     min-height: auto !important;
