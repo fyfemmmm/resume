@@ -1,0 +1,19 @@
+# Reasonix 缓存
+.reasonix/truncated-results/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# 构建产物（预留，当前项目无构建步骤）
+dist/
+build/
+out/
