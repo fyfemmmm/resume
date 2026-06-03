@@ -187,7 +187,7 @@
   }
 
   /* ===== Hero Subtle Parallax ===== */
-  const heroAvatar = document.querySelector('.avatar-placeholder');
+  const heroAvatar = document.querySelector('.avatar-photo');
 
   if (heroAvatar && window.innerWidth > 734) {
     window.addEventListener('scroll', () => {
