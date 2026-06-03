@@ -1304,14 +1304,7 @@ ul {
     display: none !important;
   }
 
-  /* Reset backgrounds and text to black-on-white */
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
+  /* Reset to black-on-white for print */
   body {
     font-size: 11pt;
     line-height: 1.5;
@@ -1380,18 +1373,15 @@ ul {
     transform: none !important;
   }
 
-  /* Cards */
+  /* Cards — allow natural page flow */
   .timeline-card,
-  .project-card,
   .skill-card,
   .award-card,
   .contact-item {
     border: 0.5pt solid #ccc !important;
     border-radius: 4pt !important;
-    padding: 10pt !important;
-    margin-bottom: 8pt !important;
-    page-break-inside: avoid;
-    break-inside: avoid;
+    padding: 8pt !important;
+    margin-bottom: 6pt !important;
     transform: none !important;
     opacity: 1 !important;
     box-shadow: none !important;
@@ -1509,12 +1499,7 @@ ul {
     color: #666 !important;
   }
 
-  /* Ensure no page breaks in bad places */
-  h2, h3 {
-    page-break-after: avoid;
-    break-after: avoid;
-  }
-
+  /* Natural page flow */
   .section-tile::before {
     display: none !important;
   }
