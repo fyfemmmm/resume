@@ -1320,11 +1320,9 @@ ul {
     print-color-adjust: exact;
   }
 
-  /* Ensure sections don't break awkwardly */
+  /* Allow sections to flow across pages — individual cards still stay together */
   .section-tile {
-    padding: 20pt 0 !important;
-    page-break-inside: avoid;
-    break-inside: avoid;
+    padding: 15pt 0 !important;
   }
 
   .hero-tile {

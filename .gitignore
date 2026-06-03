@@ -1,6 +1,12 @@
 # Reasonix 缓存
 .reasonix/truncated-results/
 
+# 不相关的文件
+材料测试说明图.jpeg
+英语六级.png
+photo.png
+master
+
 # 系统文件
 Thumbs.db
 .DS_Store
