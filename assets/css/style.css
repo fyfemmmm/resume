@@ -337,11 +337,12 @@ ul {
   overflow: hidden;
   border: 2px solid var(--color-canvas-parchment);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
+  transform: translateY(var(--parallax-y, 0px));
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease, --parallax-y 0.1s;
 }
 
 .avatar-photo:hover {
-  transform: scale(1.04);
+  transform: translateY(var(--parallax-y, 0px)) scale(1.04);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 30px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
@@ -558,8 +559,8 @@ ul {
 }
 
 .timeline-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-product);
+  transform: translateY(-3px);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 20px;
 }
 
 .section-tile-dark .timeline-card {
@@ -684,6 +685,7 @@ ul {
   transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
+  color: #ffffff;
 }
 
 .skill-card::after {
@@ -733,7 +735,7 @@ ul {
   font-weight: 400;
   line-height: 1.42857;
   letter-spacing: -0.224px;
-  color: var(--color-body-on-dark);
+  color: #ffffff;
 }
 
 /* .projects-grid — removed, unused after awards redesign */
@@ -1112,7 +1114,6 @@ ul {
   }
 
   /* .projects-grid responsive removed */
-  }
 
   .award-card {
     padding: var(--spacing-md);
@@ -1188,7 +1189,6 @@ ul {
   }
 
   /* .projects-grid mobile removed */
-  }
 
   .contact-grid {
     flex-direction: column;
@@ -1412,10 +1412,6 @@ ul {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-
-  /* .projects-grid print removed */
     grid-template-columns: repeat(3, 1fr) !important;
   }
 

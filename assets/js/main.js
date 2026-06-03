@@ -171,9 +171,15 @@
   window.addEventListener('resize', updateActiveNav, { passive: true });
   updateActiveNav();
 
+  /* ===== Print Button Handler ===== */
+  document.getElementById('btn-print')?.addEventListener('click', () => window.print());
+
   /* ===== Back to Top Button Visibility ===== */
   const backToTop = document.querySelector('.back-to-top');
   if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     let lastScrollY = 0;
     window.addEventListener('scroll', () => {
       const scrollY = window.pageYOffset;
@@ -190,12 +196,15 @@
   const heroAvatar = document.querySelector('.avatar-photo');
 
   if (heroAvatar && window.innerWidth > 734) {
+    let rafId = null;
     window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      if (scrolled < window.innerHeight) {
-        const translateY = scrolled * 0.12;
-        heroAvatar.style.transform = `translateY(${translateY}px)`;
-      }
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const scrolled = window.pageYOffset;
+        const y = scrolled < window.innerHeight ? scrolled * 0.12 : window.innerHeight * 0.12;
+        heroAvatar.style.setProperty('--parallax-y', `${y}px`);
+      });
     }, { passive: true });
   }
 
