@@ -6,35 +6,6 @@
 (function() {
   'use strict';
 
-  /* ===== Dark Mode Toggle ===== */
-  const darkToggle = document.querySelector('.dark-toggle');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('theme');
-
-  // Apply saved theme, or system preference as default
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.querySelector('.sun-icon')?.style.setProperty('display', 'none');
-    document.querySelector('.moon-icon')?.style.removeProperty('display');
-  }
-
-  if (darkToggle) {
-    darkToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        document.querySelector('.sun-icon')?.style.removeProperty('display');
-        document.querySelector('.moon-icon')?.style.setProperty('display', 'none');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        document.querySelector('.sun-icon')?.style.setProperty('display', 'none');
-        document.querySelector('.moon-icon')?.style.removeProperty('display');
-      }
-    });
-  }
-
   /* ===== Scroll Progress Bar ===== */
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
