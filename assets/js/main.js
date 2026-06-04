@@ -171,9 +171,6 @@
   window.addEventListener('resize', updateActiveNav, { passive: true });
   updateActiveNav();
 
-  /* ===== Print Button Handler ===== */
-  document.getElementById('btn-print')?.addEventListener('click', () => window.print());
-
   /* ===== Back to Top Button Visibility ===== */
   const backToTop = document.querySelector('.back-to-top');
   if (backToTop) {
