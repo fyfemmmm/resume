@@ -524,6 +524,7 @@ ul {
 
 .section-tile-dark {
   background-color: var(--color-surface-tile-1);
+  color: #ffffff;
 }
 
 .tile-inner {
